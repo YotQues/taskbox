@@ -13,4 +13,11 @@ jobs:
     # Job steps
     steps:
     - uses: actions/checkout@v1
-    - runs: yarn, npm
+    - run: yarn
+     #👇 Adds Chromatic as a step in the workflow
+    - users: chromaui/action@v1
+    # Option reauired fro Chrmoatic's GitHub Action
+    with:
+    # 👇 Chromatic projectToken, see https://storybook.js.org/tutorials/intro-to-storybook/react/en/deploy/ to obtain it
+    projectToken: ${{secrets.fdceae4f1419}}
+    token: ${{secrets.GITHUB_TOKEN}}
