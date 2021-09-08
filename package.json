@@ -10,8 +10,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start:react": "yarn start",
-    "start:storybook": "yarn storybook",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "chromatic": "chromatic --exit-zero-on-changes",
+    "build-storybook": "yarn build-storybook -o ./build"
   }
 }
