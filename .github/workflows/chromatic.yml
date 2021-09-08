@@ -1,0 +1,16 @@
+# Workflow name
+name: 'Chromatic Deployment'
+
+# Event for workflow
+on: push
+
+# List of jobs
+
+jobs:
+  test:
+    # Operating system
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+    - uses: actions/checkout@v1
+    - runs: yarn, npm
