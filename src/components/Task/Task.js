@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { TaskStates } from '../../states';
+
 export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
     <div className={`list-item ${state}`}>
       <label className="checkbox">
         <input
           type="checkbox"
-          defaultChecked={state === 'TASK_ARCHIVED'}
+          defaultChecked={state === TaskStates.TASK_ARCHIVED}
           disabled
           name="checked"
         />
@@ -17,7 +19,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
         <input type="text" value={title} readOnly placeholder="Input title" />
       </div>
       <div className="actions" onClick={event => event.stopPropagation()} >
-        {state !== 'TASK_ARCHIVED' && (
+        {state !== TaskStates.TASK_ARCHIVED && (
           //eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
             <span className={`icon-star`}></span>
