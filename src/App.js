@@ -1,11 +1,16 @@
 import React from 'react';
-import TaskList from './components/TaskList';
+import { Provider } from 'react-redux';
+
+import store from './lib/redux';
+
+import InboxScreen from './components/InboxScreen';
+
 
 const App = (props) => {
   return (
-    <div>
-      <TaskList />
-    </div>
+    <Provider store={store}>
+      <InboxScreen />
+    </Provider>
   );
 };
 

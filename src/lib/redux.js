@@ -18,7 +18,6 @@ export const pinTask = id => ({ type: actions.PIN_TASK, id });
 // All our reducers simply change the state of a single task.
 function taskStateReducer(taskState) {
   return (state, action) => {
-    const { ARCHIVE_TASK, PIN_TASK } = actions;
     return {
       ...state,
       tasks: state.task.map(task =>
@@ -30,6 +29,7 @@ function taskStateReducer(taskState) {
 
 // The reducer describes how the contents of the store change for each action.
 export const reducer = (state, action) => {
+  const { ARCHIVE_TASK, PIN_TASK } = actions;
   switch (action.type) {
     case ARCHIVE_TASK:
       return taskStateReducer(TaskStates.TASK_ARCHIVED);
