@@ -21,6 +21,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
         value={title} 
         readOnly 
         placeholder="Input title"
+        style={{textOverflow: "ellipsis"}}
          />
       </div>
       <div className="actions" onClick={event => event.stopPropagation()} >
