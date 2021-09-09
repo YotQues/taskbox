@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "start:storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "react-storybook": "concurrently npm:start:*"
+    "react-storybook": "concurrently yarn:start:*"
   },
   "eslintConfig": {
     "extends": [
